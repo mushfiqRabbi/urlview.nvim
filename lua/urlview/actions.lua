@@ -44,7 +44,7 @@ function M.system(raw_url)
   if os == "Darwin" then -- MacOS
     shell_exec("open", raw_url)
   elseif os == "Linux" or os == "FreeBSD" then -- Linux and FreeBSD
-    shell_exec("xdg-open", raw_url)
+    shell_exec("wslview", raw_url)
   elseif os:match("Windows") then -- Windows
     -- HACK: `start` cmd itself doesn't exist but lives under `cmd`
     shell_exec("cmd", { "/C", "start", raw_url })
